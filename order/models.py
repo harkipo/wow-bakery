@@ -5,6 +5,10 @@ from inventory.models import BakeryItem
 class Offer(models.Model):
     name = models.CharField(max_length=100, blank=True, null=True)
     discount_percentage = models.IntegerField(blank=True,null=True)
+    expire_at = models.DateField(blank=True,null=True)
+
+    def __str__(self):
+        return self.name
 
     class Meta:
         db_table = 'offer'
