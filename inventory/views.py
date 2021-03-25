@@ -21,6 +21,12 @@ class BakeryItemListViewSet(ReadOnlyModelViewSet):
     queryset = BakeryItem.objects.all()
     serializer_class = BakeryItemSerializer
 
+class BakeryItemPopularListViewSet(ReadOnlyModelViewSet):
+    
+
+    queryset = BakeryItem.objects.all().exclude(quantity_sold=0).order_by('-quantity_sold')[:5]
+    serializer_class = BakeryItemSerializer
+
 class BakeryItemDetailViewSet(mixins.CreateModelMixin,
                     mixins.UpdateModelMixin,
                     mixins.DestroyModelMixin,
