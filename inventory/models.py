@@ -1,9 +1,11 @@
-from django.db import models
+from django.db import models 
 
 
 class Ingredients(models.Model):
     name = models.CharField(max_length=255, blank=True, null=True)
 
+    def __str__(self):
+        return self.name
     class Meta:
         db_table = 'ingredients'
 
@@ -14,9 +16,10 @@ class BakeryItem(models.Model):
     sell_price = models.IntegerField(blank=True,null=True)
     quantity_sold = models.IntegerField(default=0)
 
-
+    def __str__(self):
+        return self.name
     class Meta:
-        db_table = 'api_logs'
+        db_table = 'bakery_items'
 
 
 class BakeryItemIngredients(models.Model):
