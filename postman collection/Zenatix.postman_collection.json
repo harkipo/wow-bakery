@@ -1,0 +1,839 @@
+{
+	"info": {
+		"_postman_id": "4576df79-7fe3-4c9b-aa8e-223fc2090eba",
+		"name": "Zenatix",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Authentication",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "username",
+									"value": "harshit",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "hehehehe",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/auth/login/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"auth",
+								"login",
+								""
+							]
+						},
+						"description": "Provide username and password, if user exists then auth token is returned"
+					},
+					"response": []
+				},
+				{
+					"name": "User Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "username",
+									"value": "harshit1",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "hehehehe",
+									"type": "text"
+								},
+								{
+									"key": "password2",
+									"value": "hehehehe",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "hehe@hehe.com",
+									"type": "text"
+								},
+								{
+									"key": "first_name",
+									"value": "test",
+									"type": "text"
+								},
+								{
+									"key": "last_name",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/auth/register/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"auth",
+								"register",
+								""
+							]
+						},
+						"description": "Provide following data:\r\nusername , first_name , last_name , email , password , password2(confirm password)\r\nand new user is created"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Inventory Management",
+			"item": [
+				{
+					"name": "Create Bakery Item",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Token a579edab29f111785f33c17b9665670661354c55",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "coffee",
+									"type": "text"
+								},
+								{
+									"key": "cost_price",
+									"value": "50",
+									"type": "text"
+								},
+								{
+									"key": "sell_price",
+									"value": "100",
+									"type": "text"
+								},
+								{
+									"key": "",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/item/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"item",
+								""
+							],
+							"query": [
+								{
+									"key": "Authorization",
+									"value": "Token eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjE2NjY3MTY4LCJqdGkiOiIzMjRiZGI3YzA4ODk0YmQ1ODE5ZmY5OGYxMGRlOGEyMyIsInVzZXJfaWQiOjEsInVzZXJuYW1lIjoiaGFyc2hpdCJ9.U6oa2MKIALFKOsPIudfLqohpxfax4XkCbFhoac4VVDA",
+									"disabled": true
+								}
+							]
+						},
+						"description": "Provide Following:\r\nname , cost_price , sell_price\r\n\r\nNew bakery item will be added in inventory"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Bakery Item",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Token a579edab29f111785f33c17b9665670661354c55",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "cake",
+									"type": "text"
+								},
+								{
+									"key": "cost_price",
+									"value": "150",
+									"type": "text"
+								},
+								{
+									"key": "sell_price",
+									"value": "400",
+									"type": "text"
+								},
+								{
+									"key": "",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/item/2/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"item",
+								"2",
+								""
+							],
+							"query": [
+								{
+									"key": "Authorization",
+									"value": "Token eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjE2NjY3MTY4LCJqdGkiOiIzMjRiZGI3YzA4ODk0YmQ1ODE5ZmY5OGYxMGRlOGEyMyIsInVzZXJfaWQiOjEsInVzZXJuYW1lIjoiaGFyc2hpdCJ9.U6oa2MKIALFKOsPIudfLqohpxfax4XkCbFhoac4VVDA",
+									"disabled": true
+								}
+							]
+						},
+						"description": "Provide:\r\nname , cost_price , sell_price\r\n\r\nBakery item will be updated"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Bakery Item ",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Token a579edab29f111785f33c17b9665670661354c55",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/item/2/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"item",
+								"2",
+								""
+							]
+						},
+						"description": "Provide PK of item to be deleted and respective bakery item will be deleted"
+					},
+					"response": []
+				},
+				{
+					"name": "View all Items",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/item/view/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"item",
+								"view",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "View Specific Item",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/item/view/1/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"item",
+								"view",
+								"1",
+								""
+							]
+						},
+						"description": "provide PK of item in url"
+					},
+					"response": []
+				},
+				{
+					"name": "View Hot Selling Items",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/item/view/popular/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"item",
+								"view",
+								"popular",
+								""
+							]
+						},
+						"description": "Returns top 5 hot selling items from bakery"
+					},
+					"response": []
+				},
+				{
+					"name": "Add Ingredient",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Token a579edab29f111785f33c17b9665670661354c55",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "milk",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/ingredient/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"ingredient",
+								""
+							]
+						},
+						"description": "Provide name and ingredient will be added"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Ingredient ",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Token a579edab29f111785f33c17b9665670661354c55",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "salt1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/ingredient/1/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"ingredient",
+								"1",
+								""
+							]
+						},
+						"description": "provide updated name and Ingredient will be updated"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Ingredient",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Token a579edab29f111785f33c17b9665670661354c55",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "salt",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/ingredient/1/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"ingredient",
+								"1",
+								""
+							]
+						},
+						"description": "provide PK of ingredient in url and it will be deleted"
+					},
+					"response": []
+				},
+				{
+					"name": "Map Ingredient to Bakery Item",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Token a579edab29f111785f33c17b9665670661354c55",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "item_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "ingredient_id",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "percentage_used",
+									"value": "30",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/item/ingredient/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"item",
+								"ingredient",
+								""
+							]
+						},
+						"description": "Provide item_id , ingredient_id and percentage_used\r\n\r\nfollowing ingridient will be mapped to bakery item"
+					},
+					"response": []
+				},
+				{
+					"name": "Unmap Ingredient with Bakery Item",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Token a579edab29f111785f33c17b9665670661354c55",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "item_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "ingredient_id",
+									"value": "2",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/item/ingredient/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"item",
+								"ingredient",
+								""
+							]
+						},
+						"description": "provide item_id and ingredient_id \r\n\r\nfollowing ingredient will be unmapped from bakery item"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Order Management",
+			"item": [
+				{
+					"name": "Create Offer",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Token a579edab29f111785f33c17b9665670661354c55",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "wow40",
+									"type": "text"
+								},
+								{
+									"key": "discount_percentage",
+									"value": "40",
+									"type": "text"
+								},
+								{
+									"key": "expire_at",
+									"value": "2021-03-29",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/offer/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"offer",
+								""
+							]
+						},
+						"description": "provide name and discount_percentage\r\n\r\ncreate new offer"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Offer",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Token a579edab29f111785f33c17b9665670661354c55",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "wow30",
+									"type": "text"
+								},
+								{
+									"key": "discount_percentage",
+									"value": "30",
+									"type": "text"
+								},
+								{
+									"key": "expire_at",
+									"value": "2021-03-30",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/offer/1/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"offer",
+								"1",
+								""
+							]
+						},
+						"description": "Provide updated values of name and discount_percentage\r\n\r\n"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Offer",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Token a579edab29f111785f33c17b9665670661354c55",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/offer/1/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"offer",
+								"1",
+								""
+							]
+						},
+						"description": "Provide offer id in url"
+					},
+					"response": []
+				},
+				{
+					"name": "Create Order",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Token a579edab29f111785f33c17b9665670661354c55",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "item",
+									"value": "[\n        {\n            \"item_id\":1,\n            \"quantity\":1\n        },\n        {\n            \"item_id\":3,\n            \"quantity\":3\n        }\n\n    ]",
+									"type": "text"
+								},
+								{
+									"key": "offer_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "address",
+									"value": "h.no 1228",
+									"type": "text"
+								},
+								{
+									"key": "state",
+									"value": "Haryana",
+									"type": "text"
+								},
+								{
+									"key": "city",
+									"value": "Gurgaon",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/order/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"order",
+								""
+							]
+						},
+						"description": "Provide:\r\nitem - List of items along with their quantities\r\noffer_id , address , state , city\r\n\r\nOrder will be created and order details will be returned along with items for the bill generation"
+					},
+					"response": []
+				},
+				{
+					"name": "Retrieve Order",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Token a579edab29f111785f33c17b9665670661354c55",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/order/1/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"order",
+								"1",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
