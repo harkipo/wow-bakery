@@ -67,19 +67,28 @@ WSGI_APPLICATION = 'zenatix.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'zenatix',
-        'USER': 'harshit',
-        'PASSWORD':'hehehehe',
-        'HOST': '',
-        'PORT': '',
-        'OPTIONS': {
-            'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"
-        }
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
 }
-}
+
+
+# DATABASES = {                     # Uncomment if want to use mysql
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': '<DB name>',
+#         'USER': '<username>',
+#         'PASSWORD':'<password>',
+#         'HOST': '',
+#         'PORT': '',
+#         'OPTIONS': {
+#             'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"
+#         }
+# }
+# }
 
 
 
@@ -122,14 +131,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
-
-
-SIMPLE_JWT = {
-    'REFRESH_TOKEN_LIFETIME': timedelta(days=15),
-    'ROTATE_REFRESH_TOKENS': False,
-    'BLACKLIST_AFTER_ROTATION': False
-}
-
 
 
 
